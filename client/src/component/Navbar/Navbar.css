@@ -1,0 +1,87 @@
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  display: flex;
+  height: 11vh;
+  position:sticky;
+  background-image: url("https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png");
+  background-size: cover;
+  justify-content: space-around;
+  top: 0;
+  align-items:center;  
+}
+/* navbar styling */
+
+
+nav .header {
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  
+}
+
+nav .header:hover {
+  cursor: pointer;
+
+}
+
+nav .navbar-links {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  cursor: pointer;
+}
+nav .navbar-links a {
+  font-size: 17px;
+  font-weight: normal;
+  cursor: pointer;
+  text-transform: capitalize;
+
+}
+nav .navbar-links a:hover {
+  cursor: pointer;
+  color: black;
+}
+nav .burger-menu {
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+.nav-active {
+  color: black;
+}
+
+@media all and (max-width: 777px) {
+  nav .burger-menu {
+    display: block;
+  }
+  nav .navbar-links {
+    background-color: tomato;
+    display: block;
+    width: 50%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0px;
+    transform: translate(-700px);
+  }
+  nav .navbar-links li {
+    padding: 25px;
+    border-top: 3px solid white;
+  }
+}
+
+

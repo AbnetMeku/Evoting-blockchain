@@ -1,0 +1,96 @@
+.label-home {
+  padding: 0.5em;
+  margin-bottom: 10px;
+  color: rgb(173, 20, 20); 
+}
+
+
+.input-home {
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid #7807e2;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: rgb(133, 62, 62);
+  width: 280px;
+}
+.input-home,
+.label-home {
+  display: block;
+  margin-right: 0%;
+  
+}
+.input-home:hover {
+  border-color: #73AD21;
+}
+
+.label-home:hover {
+  border-color: #73AD21;
+}
+
+.input-home:focus {
+  outline: 0;
+  box-shadow: none;
+  border-color: #73AD21;
+}
+
+.label-home:focus {
+  outline: 0;
+  box-shadow: none;
+  border-color: #73AD21;
+}
+
+#Account {
+  background-color: white;
+  color:rgba(0, 132, 130, 1);
+  border-radius: 100px;
+  width: auto;
+}
+
+#notIn{
+  text-align: center;
+  background-color: azure;
+  opacity: 0.6;
+  z-index: 0;
+  border-radius: 20px;
+}
+
+#a{
+  font-size: 25px;
+  margin-top: 15px;
+  animation: blinker 2s linear infinite;
+  color:#735385 ;
+}
+ @keyframes blinker {
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+#abtA{
+background-color: #66000000;
+margin-left: 200px;
+margin-right: 5%;
+
+
+width: 390px;
+display: flex;
+justify-content: center;
+
+height:70vh;
+}
+
+#abtE{
+background-color: #0000ffff;
+
+margin-left: 5%;
+
+width: 390px;
+display: flex;
+justify-content: center;
+
+height:70vh;
+}
+
+
