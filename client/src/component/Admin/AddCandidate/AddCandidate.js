@@ -136,11 +136,11 @@ export default class AddCandidate extends Component {
                 />
               </label>
               <label className={"label-ac"}>
-                Slogan
+                Candidate Image
                 <input
                   className={"input-ac"}
                   type="url"
-                  placeholder="eg. It is what it is"
+                  placeholder="eg. Image URL"
                   value={this.state.slogan}
                   onChange={this.updateSlogan}
                 />
@@ -203,3 +203,4 @@ export function loadAdded(candidates) {
     </div>
   );
 }
+

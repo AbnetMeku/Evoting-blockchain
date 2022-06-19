@@ -78,7 +78,7 @@ export default class Registration extends Component {
         this.state.voters.push({
           address: voter.voterAddress,
           name: voter.name,
-          phone: voter.phone,
+          ID: voter.ID,
           hasVoted: voter.hasVoted,
           isVerified: voter.isVerified,
           isRegistered: voter.isRegistered,
@@ -108,12 +108,12 @@ export default class Registration extends Component {
             <table>
               <tr>
                 <th>Name</th>
-                <th>Phone</th>
+                <th>ID</th>
                 <th>Voted</th>
               </tr>
               <tr>
                 <td>{voter.name}</td>
-                <td>{voter.phone}</td>
+                <td><a href={voter.ID}>ID Card</a></td>
                 <td>{voter.hasVoted ? "True" : "False"}</td>
               </tr>
             </table>
@@ -133,8 +133,8 @@ export default class Registration extends Component {
               <td>{voter.name}</td>
             </tr>
             <tr>
-              <th>Phone</th>
-              <td>{voter.phone}</td>
+              <th>ID</th>
+              <td><a href={voter.ID}>ID Card</a></td>
             </tr>
             <tr>
               <th>Voted</th>

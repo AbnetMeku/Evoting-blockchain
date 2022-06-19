@@ -1,85 +1,85 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.4.21 <0.9.0;
 
-contract Election {
-    address public admin;
-    uint256 candidateCount;
-    uint256 voterCount;
-    bool start;
-    bool end;
+ contract Election {
+     address public admin;
+     uint256 candidateCount;
+     uint256 voterCount;
+     bool start;
+     bool end;
 
-     constructor() public {
+    constructor() public {
         // Initilizing default values
         admin = msg.sender;
         candidateCount = 0;
         voterCount = 0;
         start = false;
         end = false;
-    }
+     }
 
-    function getAdmin() public view returns (address) {
+     function getAdmin() public view returns (address) {
         // Returns account address used to deploy contract (i.e. admin)
         return admin;
-    }
+     } 
 
-    modifier onlyAdmin() {
-        // Modifier for only admin access
+     modifier onlyAdmin() {
+        // Modifier(give function a behaviour) for only admin access
         require(msg.sender == admin);
         _;
-    }
-    // Modeling a candidate
-    struct Candidate {
+     }
+
+     // Modeling a candidate
+      struct Candidate {
         uint256 candidateId;
         string header;
         string slogan;
+        string image;
         uint256 voteCount;
-    }
-    mapping(uint256 => Candidate) public candidateDetails;
+       }
+     mapping(uint256 => Candidate) public candidateDetails;
 
-    // Adding new candidates
-    function addCandidate(string memory _header, string memory _slogan)
-        public
+     // Adding new candidates
+     function addCandidate(string memory _header, string memory _slogan, string memory _image) public
         // Only admin can add
-        onlyAdmin
-    {
-        Candidate memory newCandidate =
+        onlyAdmin {
+            Candidate memory newCandidate =
             Candidate({
                 candidateId: candidateCount,
                 header: _header,
                 slogan: _slogan,
+                image: _image,
                 voteCount: 0
             });
-        candidateDetails[candidateCount] = newCandidate;
-        candidateCount += 1;
-    }
+         candidateDetails[candidateCount] = newCandidate;
+         candidateCount += 1;
+        }
 
-    // Modeling a Election Details
-    struct ElectionDetails {
+     // Setting Election Details
+     struct ElectionDetails {
         string adminName;
         string adminEmail;
         string adminTitle;
         string electionTitle;
-        string organizationTitle;
-    }
-    ElectionDetails electionDetails;
+        string PollingStation;
+     }
+     ElectionDetails electionDetails;
 
-    function setElectionDetails(
+     function setElectionDetails(
         string memory _adminName,
         string memory _adminEmail,
         string memory _adminTitle,
         string memory _electionTitle,
-        string memory _organizationTitle
-    )
-        public
+        string memory _PollingStation
+     ) public
+        
         // Only admin can add
-        onlyAdmin
-    {
-        electionDetails = ElectionDetails(
+        onlyAdmin {
+          electionDetails = ElectionDetails(
             _adminName,
             _adminEmail,
             _adminTitle,
             _electionTitle,
-            _organizationTitle
+            _PollingStation
         );
         start = true;
         end = false;
@@ -102,8 +102,8 @@ contract Election {
         return electionDetails.electionTitle;
     }
 
-    function getOrganizationTitle() public view returns (string memory) {
-        return electionDetails.organizationTitle;
+    function getPollingStation() public view returns (string memory) {
+        return electionDetails.PollingStation;
     }
 
     // Get candidates count
@@ -147,13 +147,11 @@ contract Election {
     }
 
     // Verify voter
-    function verifyVoter(bool _verifedStatus, address voterAddress)
-        public
+    function verifyVoter(bool _verifedStatus, address voterAddress) public
         // Only admin can verify
-        onlyAdmin
-    {
-        voterDetails[voterAddress].isVerified = _verifedStatus;
-    }
+        onlyAdmin{
+            voterDetails[voterAddress].isVerified = _verifedStatus;
+        }
 
     // Vote
     function vote(uint256 candidateId) public {

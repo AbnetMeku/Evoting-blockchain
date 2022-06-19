@@ -1,8 +1,6 @@
 // Node modules
 import React, { Component } from "react";
 
-
-
 // Components
 import Navbar from "../Navbar/Navigation";
 import NavbarAdmin from "../Navbar/NavigationAdmin";
@@ -33,7 +31,6 @@ export default class Registration extends Component {
         address: undefined,
         name: null,
         ID: null,
-        
         hasVoted: false,
         isVerified: false,
         isRegistered: false,
@@ -41,8 +38,6 @@ export default class Registration extends Component {
     };
   }
 
-
-  
   // refreshing once
   componentDidMount = async () => {
     if (!window.location.hash) {
@@ -131,19 +126,19 @@ export default class Registration extends Component {
       );
     }
   };
-  
+  updateVoterName = (event) => {
+    this.setState({ voterName: event.target.value });
+  };
+  updateVoterID = (event) => {
+    this.setState({ voterID: event.target.value });
+  };
   registerAsVoter = async () => {
     await this.state.ElectionInstance.methods
       .registerAsVoter(this.state.voterName, this.state.voterID)
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
   };
-
-  
-  
-
   render() {
-  
     if (!this.state.web3) {
       return (
         <>
@@ -155,8 +150,8 @@ export default class Registration extends Component {
     return (
       <>
         {this.state.isAdmin ? <NavbarAdmin /> : <Navbar />}
-        {!this.state.isElStarted && !this.state.isElEnded ? ( 
-        <NotInit /> 
+        {!this.state.isElStarted && !this.state.isElEnded ? (
+          <NotInit />
         ) : (
           <>
             <div className="container-item info">
@@ -186,24 +181,22 @@ export default class Registration extends Component {
                         type="text"
                         placeholder="eg. Abnet"
                         value={this.state.voterName}
-                        required
+                        onChange={this.updateVoterName}
                       />{" "}
                     </label>
                   </div>
                   <div className="div-li">
                     <label className={"label-r"}>
-                      ID Card <span style={{ color: "tomato" }}>*</span>
+                      ID number <span style={{ color: "tomato" }}>*</span>
                       <input
                         className={"input-r"}
-                        type="url"
-                        placeholder="eg. Kebele/Student ID"
+                        type="Url"
+                        placeholder="eg. ID image url"
                         value={this.state.voterID}
-                        required
+                        onChange={this.updateVoterID}
                       />
                     </label>
-                    
                   </div>
-                  
                   <p className="note">
                     <span style={{ color: "tomato" }}> Note: </span>
                     <br /> Make sure your account address is
@@ -218,7 +211,9 @@ export default class Registration extends Component {
                     }
                     onClick={this.registerAsVoter}
                   >
-                   Register
+                    {this.state.currentVoter.isRegistered
+                      ? "Update"
+                      : "Register"}
                   </button>
                 </form>
               </div>
@@ -272,9 +267,8 @@ export function loadCurrentVoter(voter, isRegistered) {
             <td>{voter.name}</td>
           </tr>
           <tr>
-            <th>ID Card</th>
-            <td>
-            <a href={voter.ID}>ID Card</a> 
+            <th>ID</th>
+            <td><a href={voter.ID}>ID Card</a>
             </td>
           </tr>
           <tr>
@@ -309,10 +303,8 @@ export function loadAllVoters(voters) {
               <td>{voter.name}</td>
             </tr>
             <tr>
-              <th>ID Card</th>
-              <td>
-                <a href={voter.ID}>ID Card</a> 
-              </td>
+              <th>ID</th>
+              <td><a href={voter.ID}>ID Card</a></td>
             </tr>
             <tr>
               <th>Voted</th>

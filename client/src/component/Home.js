@@ -213,12 +213,12 @@ export default class Home extends Component {
       };
       
       return (
-        <div>
+        <div >
           <form onSubmit={handleSubmit(onSubmit)}>
             {!this.state.elStarted & !this.state.elEnded ? (
               
                 //main container
-          <div className="d-flex flex-row mb-3"> 
+          <div className="d-flex flex-row mb-3" id="form"> 
 
                 {/* about-admin */}
                  <div className="p-2" id="abtA">
@@ -307,7 +307,7 @@ export default class Home extends Component {
                       </label>
                       <label className="label-home">
                         Polling Station{" "}
-                        {errors.organizationName && <EMsg msg="*required" />}
+                        {errors.PollingStation && <EMsg msg="*required" />}
                         <input
                           className="input-home"
                           type="text"

@@ -42,15 +42,15 @@
 }
 
 #Account {
-  background-color: white;
-  color:rgba(0, 132, 130, 1);
+  background-color: azure;
+  color:#794b94;
   border-radius: 100px;
   width: auto;
 }
 
 #notIn{
   text-align: center;
-  background-color: azure;
+  background-color:rgb(217, 247, 247);
   opacity: 0.6;
   z-index: 0;
   border-radius: 20px;
@@ -67,26 +67,30 @@
       opacity: 0.3;
     }
   }
+#form{
+background-color: #735385;
+display: flex;
+align-items: center;
+justify-content: center;
+width: 950px;
+height: 550px;
+margin: auto;
+}
 
 #abtA{
-background-color: #66000000;
-margin-left: 200px;
-margin-right: 5%;
-
-
-width: 390px;
+background-image: url("https://media.istockphoto.com/photos/vector-hexagons-pattern-geometric-abstract-background-with-simple-picture-id1307794659?b=1&k=20&m=1307794659&s=170667a&w=0&h=8utxIGEIgxxX_rUGxa5DtS7MQIaCHvQjt1eBrU28lEg=");
+margin-right: 4%;
+width: 380px;
 display: flex;
 justify-content: center;
-
 height:70vh;
 }
 
 #abtE{
-background-color: #0000ffff;
+background-image: url("https://media.istockphoto.com/photos/vector-hexagons-pattern-geometric-abstract-background-with-simple-picture-id1307794659?b=1&k=20&m=1307794659&s=170667a&w=0&h=8utxIGEIgxxX_rUGxa5DtS7MQIaCHvQjt1eBrU28lEg=");
 
-margin-left: 5%;
-
-width: 390px;
+margin-left: 4%;
+width: 380px;
 display: flex;
 justify-content: center;
 

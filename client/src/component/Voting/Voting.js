@@ -141,7 +141,7 @@ export default class Voting extends Component {
           <h2>
             {candidate.header} <small>#{candidate.id}</small>
           </h2>
-          <p className="slogan">{candidate.slogan}</p>
+          <p className="slogan"><img src={candidate.slogan} alt="Candidate Pic" width="100px" height="100px"></img></p>
         </div>
         <div className="vote-btn-container">
           <button

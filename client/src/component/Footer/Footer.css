@@ -9,6 +9,20 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
-  
+ background-image: url("https://culturalhosting.com/images/slides/slide4.jpeg"); 
+ background-size: contain;
 }
 
+#siz{
+  height: 105px;
+  width: 155px;
+
+}
+.text-white{
+padding-left:80px ;
+}
+#k{
+  padding-left: 70px;
+  margin-left: 0%;
+  text-align: left;
+}
