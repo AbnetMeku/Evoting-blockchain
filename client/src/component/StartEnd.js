@@ -1,48 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import "./Home.css"
 
 const StartEnd = (props) => {
-  const btn = {
-    display: "block",
-    padding: "21px",
-    margin: "7px",
-    minWidth: "max-content",
-    textAlign: "center",
-    width: "333px",
-    alignSelf: "center",
-  };
+  
   return (
-    <div
-      className="container-main"
-      style={{ borderTop: "1px solid", marginTop: "0px" }}
-    >
+    <div className="container-main" >
       {!props.elStarted ? (
         <>
           {/* start election Again button */}
           {!props.elEnded ? (
             <>
-              <div
-                className="container-item attention"
-                style={{ display: "block" }}
-              >
-                <h2>Add Candidates!</h2>
-                <p>
-                  Go to{" "}
-                  <Link
-                    title="Add a new "
-                    to="/addCandidate"
-                    style={{
-                      color: "black",
-                      textDecoration: "underline",
-                    }}
-                  >
-                    Add Candidates
-                  </Link>{" "}
-                  page.
-                </p>
-              </div>
-              <div className="container-item">
-                <button type="submit" style={btn}>
+          <div>
+                <button type="submit" id="btn">
                   Start Election {props.elEnded ? "Again" : null}
                 </button>
               </div>
@@ -74,7 +43,7 @@ const StartEnd = (props) => {
               type="button"
               // onClick={this.endElection}
               onClick={props.endElFn}
-              style={btn}
+              id="btn"
             >
               End
             </button>

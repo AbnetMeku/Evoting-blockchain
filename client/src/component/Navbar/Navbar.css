@@ -8,18 +8,24 @@ li {
 
 a {
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
+}
+#logo{
+  cursor: pointer;
+  margin-left: 0px; 
 }
 
 nav {
   display: flex;
   height: 11vh;
   position:sticky;
-  background-image: url("https://coolbackgrounds.io/images/backgrounds/index/sea-edge-79ab30e2.png");
-  background-size: cover;
+  overflow: hidden;
+  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg");
+  background-size:cover;
   justify-content: space-around;
   top: 0;
-  align-items:center;  
+  align-items:center;
+  z-index: 10;  
 }
 /* navbar styling */
 
@@ -34,7 +40,7 @@ nav .header {
 
 nav .header:hover {
   cursor: pointer;
-
+ color: black
 }
 
 nav .navbar-links {

@@ -8,7 +8,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
     <nav>
+      
       <img src={logo} alt="Logo" width={74} height={74}/>
+      
       <NavLink to="/" className="header">
         <i className="fab fa-hive"></i> Home
       </NavLink>

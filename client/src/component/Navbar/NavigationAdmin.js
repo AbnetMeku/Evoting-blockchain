@@ -10,12 +10,12 @@ export default function NavbarAdmin() {
     
     <nav>
       <img src={logo} alt="Logo" width={74} height={74}/>
-      <div className="header">
-        <NavLink to="/">
+      
+        <NavLink to="/" className="header">
           <i className="fab fa-hive" /> 
            Admin
         </NavLink>
-      </div>
+      
       <ul
         className="navbar-links"
         style={{ transform: open ? "translateX(0px)" : "" }}

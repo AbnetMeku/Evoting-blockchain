@@ -3,8 +3,6 @@ import React, { Component } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-
-
 // Components
 import Navbar from "./Navbar/Navigation";
 import NavbarAdmin from "./Navbar/NavigationAdmin";
@@ -18,8 +16,9 @@ import Election from "../contracts/Election.json";
 
 // CSS
 import "./Home.css";
+import "./NotInit.css"
 
-// const buttonRef = React.createRef();
+//
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +33,7 @@ export default class Home extends Component {
     };
   }
 
-  // refreshing once
+  // refreshs page once 
   componentDidMount = async () => {
     if (!window.location.hash) {
       window.location = window.location + "#loaded";
@@ -50,19 +49,16 @@ export default class Home extends Component {
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = Election.networks[networkId];
-      const instance = new web3.eth.Contract(
-        Election.abi,
-        deployedNetwork && deployedNetwork.address
-      );
+      const instance = new web3.eth.Contract( Election.abi, deployedNetwork && deployedNetwork.address );
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
+      // Set web3, accounts, and contract to the state
       this.setState({
         web3: web3,
         ElectionInstance: instance,
         account: accounts[0],
       });
 
+      //Admin or not
       const admin = await this.state.ElectionInstance.methods.getAdmin().call();
       if (this.state.account === admin) {
         this.setState({ isAdmin: true });
@@ -87,8 +83,8 @@ export default class Home extends Component {
       const electionTitle = await this.state.ElectionInstance.methods
         .getElectionTitle()
         .call();
-      const organizationTitle = await this.state.ElectionInstance.methods
-        .getOrganizationTitle()
+      const PollingStation = await this.state.ElectionInstance.methods
+        .getPollingStation()
         .call();
 
       this.setState({
@@ -97,17 +93,14 @@ export default class Home extends Component {
           adminEmail: adminEmail,
           adminTitle: adminTitle,
           electionTitle: electionTitle,
-          organizationTitle: organizationTitle,
+          PollingStation: PollingStation,
         },
-      });
-    } catch (error) {
-      // Catch any errors for any of the above operations.
-      alert(
-        `Failed to load web3, accounts, or contract.`
-      );
+      });   // Catch any errors for any of the above operations.
+    } catch (error) { alert( `Failed to load web3, accounts, or contract.`);
       console.error(error);
     }
   };
+
   // end election
   endElection = async () => {
     await this.state.ElectionInstance.methods
@@ -124,7 +117,7 @@ export default class Home extends Component {
         data.adminEmail.toLowerCase(),
         data.adminTitle.toLowerCase(),
         data.electionTitle.toLowerCase(),
-        data.organizationTitle.toLowerCase()
+        data.PollingStation.toLowerCase()
       )
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
@@ -153,16 +146,19 @@ export default class Home extends Component {
               <div id="notIn">
                 
               <p id="a"><i class="fas fa-exclamation-triangle"></i>  Election not been initialized.</p> 
-                {this.state.isAdmin ? (
-                  <p>Set up the election.</p>
-                ) : (
-                  <p>Please wait..</p>
-                )}
+                {this.state.isAdmin ? 
+                (<p>Set up the election.</p>) : 
+                (<p>Please wait..</p> )
+                }
 
               </div>
-               
+              
           ) : null}
           </div>
+                {this.state.isAdmin ? 
+                ("") : 
+                (<div id="pag"></div> )
+                }
         {this.state.isAdmin ? (
           <>
             <this.renderAdminHome />
@@ -213,12 +209,12 @@ export default class Home extends Component {
       };
       
       return (
-        <div>
-          <form onSubmit={handleSubmit(onSubmit)}>
+        <div id="wh">
+           <form onSubmit={handleSubmit(onSubmit)}>
             {!this.state.elStarted & !this.state.elEnded ? (
               
                 //main container
-          <div className="d-flex flex-row mb-3"> 
+           <div className="d-flex flex-row mb-3" id="form"> 
 
                 {/* about-admin */}
                  <div className="p-2" id="abtA">
@@ -290,8 +286,6 @@ export default class Home extends Component {
                
                  <div className="p-2"  id="abtE">
 
-                  
-                  
                      <div><h3>About Election</h3>
                       <label className="label-home">
                         Election Title{" "}
@@ -307,12 +301,12 @@ export default class Home extends Component {
                       </label>
                       <label className="label-home">
                         Polling Station{" "}
-                        {errors.organizationName && <EMsg msg="*required" />}
+                        {errors.PollingStation && <EMsg msg="*required" />}
                         <input
                           className="input-home"
                           type="text"
                           placeholder="eg. Kezira Polling Station"
-                          {...register("organizationTitle", {
+                          {...register("PollingStation", {
                             required: true,
                           })}
                         />
@@ -338,10 +332,7 @@ export default class Home extends Component {
               elEnded={this.state.elEnded}
             />
            </form>
-
-
-
-          </div>
+      </div>
             
         );
     };

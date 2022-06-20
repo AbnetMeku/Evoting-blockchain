@@ -6,11 +6,11 @@ const NotInit = () => {
   // Component: Displaying election not initialize message.
   return (
     <div  id="page">
-      <div className="container-item info">
-      <center>
-        <h3>The election has not been initialize.</h3>
-        <p>Please Wait..</p>
-      </center>  
+      <div id="notIn2">
+      
+      <p id="a2"><i class="fas fa-exclamation-triangle"></i>  Election not been initialized.
+      <br></br><p>Please Wait.. </p></p>
+    
       </div>
     </div>
   );

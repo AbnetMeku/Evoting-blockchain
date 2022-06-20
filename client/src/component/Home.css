@@ -42,16 +42,16 @@
 }
 
 #Account {
-  background-color: white;
-  color:rgba(0, 132, 130, 1);
+  background-color: azure;
+  color:#794b94;
   border-radius: 100px;
   width: auto;
 }
 
 #notIn{
   text-align: center;
-  background-color: azure;
-  opacity: 0.6;
+  background-color:azure;
+  opacity: 0.7;
   z-index: 0;
   border-radius: 20px;
 }
@@ -63,34 +63,58 @@
   color:#735385 ;
 }
  @keyframes blinker {
-    50% {
-      opacity: 0.3;
+    90% {
+      opacity: 0.5;
     }
   }
 
-#abtA{
-background-color: #66000000;
-margin-left: 200px;
-margin-right: 5%;
-
-
-width: 390px;
+#form{
+background-color: transparent;
 display: flex;
+align-items: center;
 justify-content: center;
+width: 950px;
+height: 450px;
+margin: auto;
+}
 
-height:70vh;
+#abtA{
+background-color: azure;
+  margin-right: 4%;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  height:70vh;
+  box-shadow: 2px 2px 20px 2px rgb(223, 188, 245);
+  border-radius: 15px;
+ 
 }
 
 #abtE{
-background-color: #0000ffff;
+  background-color: azure;
+  margin-left: 4%;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  height:70vh;
+  box-shadow: 2px 2px 20px 2px rgb(223, 188, 245);
+  border-radius: 15px;
+}
 
-margin-left: 5%;
+#btn{
+  color:#73AD21;
+  padding: 1.2rem 3rem;
+  text-transform: uppercase;
+  border-radius: 15px;
+  background-color: rgb(231, 229, 229);
+  border: 1px solid rgb(231, 229, 229);
 
-width: 390px;
-display: flex;
-justify-content: center;
+}
 
-height:70vh;
+#btn:hover {
+  border: 1px solid rgb(231, 229, 229);
+  background: #73AD21;
+  color: #050202;
 }
 
 

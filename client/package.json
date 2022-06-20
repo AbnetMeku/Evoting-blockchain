@@ -13,6 +13,7 @@
     "react-papaparse": "^3.12.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
+    "react-switch": "^7.0.0",
     "web3": "1.2.2"
   },
   "scripts": {

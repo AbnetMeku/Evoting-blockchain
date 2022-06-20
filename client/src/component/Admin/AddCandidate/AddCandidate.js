@@ -1,13 +1,14 @@
+//node modules
 import React, { Component } from "react";
 
+//components
 import Navbar from "../../Navbar/Navigation";
 import NavbarAdmin from "../../Navbar/NavigationAdmin";
-
 import getWeb3 from "../../../getWeb3";
 import Election from "../../../contracts/Election.json";
-
 import AdminOnly from "../../AdminOnly";
 
+//css
 import "./AddCandidate.css";
 
 export default class AddCandidate extends Component {
@@ -19,6 +20,7 @@ export default class AddCandidate extends Component {
       accounts: null,
       isAdmin: false,
       header: "",
+      image:"",
       slogan: "",
       candidates: [],
       candidateCount: undefined,
@@ -44,8 +46,7 @@ export default class AddCandidate extends Component {
       const deployedNetwork = Election.networks[networkId];
       const instance = new web3.eth.Contract(
         Election.abi,
-        deployedNetwork && deployedNetwork.address
-      );
+        deployedNetwork && deployedNetwork.address );
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
       this.setState({
@@ -73,6 +74,7 @@ export default class AddCandidate extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
+          image: candidate.image,
           slogan: candidate.slogan,
         });
       }
@@ -89,16 +91,21 @@ export default class AddCandidate extends Component {
   updateHeader = (event) => {
     this.setState({ header: event.target.value });
   };
+  updateimage = (event) => {
+    this.setState({ image: event.target.value });
+  };
   updateSlogan = (event) => {
     this.setState({ slogan: event.target.value });
   };
 
   addCandidate = async () => {
     await this.state.ElectionInstance.methods
-      .addCandidate(this.state.header, this.state.slogan)
+      .addCandidate(this.state.header, this.state.slogan,this.state.image)
       .send({ from: this.state.account, gas: 1000000 });
     window.location.reload();
   };
+
+  //render page 
 
   render() {
     if (!this.state.web3) {
@@ -120,41 +127,56 @@ export default class AddCandidate extends Component {
     return (
       <>
         <NavbarAdmin />
-        <div className="container-main">
-          <h2>Add a new candidate</h2>
-          <small>Total candidates: {this.state.candidateCount}</small>
-          <div className="container-item">
+        <div id="form2">
+          
+          <div className="p-2" id="abtc">
+           <div>
+            <h3>Add Candidates</h3>
+            <small>Total candidates: {this.state.candidateCount}</small>
             <form className="form">
               <label className={"label-ac"}>
-                Candidate
+                Candidate Name
                 <input
                   className={"input-ac"}
                   type="text"
-                  placeholder="eg. Aba Dula"
+                  placeholder="Full Name"
                   value={this.state.header}
                   onChange={this.updateHeader}
                 />
               </label>
               <label className={"label-ac"}>
-                Slogan
+                Candidate Image
                 <input
                   className={"input-ac"}
                   type="url"
-                  placeholder="eg. It is what it is"
+                  placeholder="Image URL"
+                  required
+                  value={this.state.image}
+                  onChange={this.updateimage}
+                />
+              </label>
+              <label className={"label-ac"}>
+                Party Slogan
+                <input
+                  className={"input-ac"}
+                  type="text"
+                  placeholder="Enter Slogan"
+                  required
                   value={this.state.slogan}
                   onChange={this.updateSlogan}
                 />
               </label>
               <button
-                className="btn-add"
+                id="btnAdd"
                 disabled={
-                  this.state.header.length < 3 || this.state.header.length > 21
+                  this.state.header.length < 7 || this.state.header.length > 30
                 }
                 onClick={this.addCandidate}
               >
                 Add
               </button>
             </form>
+            </div>
           </div>
         </div>
         {loadAdded(this.state.candidates)}
@@ -167,14 +189,11 @@ export function loadAdded(candidates) {
     return (
       <>
         <div className="container-list success">
-          <div
-            style={{
-              maxHeight: "auto",
-              overflow: "auto",
-            }}
-          >
-            {candidate.id}. <strong>{candidate.header}</strong>:{" "}
-            <img src={candidate.slogan} alt="Candidate Pic" width="100px" height="100px"></img>
+          <div style={{maxHeight: "auto",overflow: "auto",}} id="Canlist">
+            {candidate.id}. <strong>{candidate.header}</strong>:
+            {" "}
+            <img src={candidate.image} alt="Candidate Pic" width="150px" height="150px"></img>
+            {candidate.slogan}
           </div>
         </div>
       </>
@@ -203,3 +222,4 @@ export function loadAdded(candidates) {
     </div>
   );
 }
+
