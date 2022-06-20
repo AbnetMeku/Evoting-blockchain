@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 
 
-//compo
+//components
 import Navbar from "../../Navbar/Navigation";
 import NavbarAdmin from "../../Navbar/NavigationAdmin";
-
 import AdminOnly from "../../AdminOnly";
 
+//contracts and web3
 import getWeb3 from "../../../getWeb3";
 import Election from "../../../contracts/Election.json";
 
+//css
 import "./Verification.css";
 import "../../NotInit.css";
 

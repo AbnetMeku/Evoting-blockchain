@@ -15,9 +15,11 @@ import Footer from "./component/Footer/Footer";
 import "./App.css";
 
 
+
 export default class App extends Component {
   render() {
     return (
+      
       <div className="App" id="ap">
         <Router>
           <Switch>
@@ -32,9 +34,10 @@ export default class App extends Component {
           </Switch>
         </Router>
         <Footer />
-        
-        
+     
+     
       </div>
+    
     );
   }
 }

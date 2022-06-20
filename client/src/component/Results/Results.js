@@ -157,7 +157,7 @@ function displayWinner(candidates) {
         <div className="winner-info">
           <p className="winner-tag">Winner!</p>
           <h2> {winner.header}</h2>
-          <p className="winner-slogan">{winner.slogan}</p>
+          <p className="winner-slogan"><img src={winner.slogan} alt="Candidate Pic" width="100px" height="100px"></img></p>
         </div>
         <div className="winner-votes">
           <div className="votes-tag">Total Votes: </div>

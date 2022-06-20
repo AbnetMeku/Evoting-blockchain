@@ -8,19 +8,24 @@ li {
 
 a {
   text-decoration: none;
-  color: rgba(0, 132, 130, 1);
+  color: whitesmoke;
+}
+#logo{
+  cursor: pointer;
+  margin-left: 0px; 
 }
 
 nav {
   display: flex;
   height: 11vh;
   position:sticky;
-  background-image: url("https://img.freepik.com/free-vector/white-color-technology-abstract-background-vector-illustration-modern-design-concept_29865-4088.jpg?w=2000");
-  background-size: cover;
+  overflow: hidden;
+  background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-036.jpg");
+  background-size:cover;
   justify-content: space-around;
   top: 0;
   align-items:center;
-  z-index: 0;  
+  z-index: 10;  
 }
 /* navbar styling */
 
@@ -35,7 +40,7 @@ nav .header {
 
 nav .header:hover {
   cursor: pointer;
-
+ color: black
 }
 
 nav .navbar-links {

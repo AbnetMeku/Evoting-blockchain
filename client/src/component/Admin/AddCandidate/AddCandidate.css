@@ -6,31 +6,94 @@
   margin-left: auto;
   overflow: auto;
 }
-.input-ac {
-  margin: 0.5em;
-  margin-left: 0;
-  padding: 1em;
-  display: block;
-  width: 333px;
+.label-ac {
+  padding: 0.5em;
+  margin-bottom: 10px;
+  color: rgb(173, 20, 20); 
 }
+
+
+.input-ac {
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid #7807e2;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: rgb(133, 62, 62);
+  width: 280px;
+}
+.input-ac,
 .label-ac {
   display: block;
-  margin: 0.1em;
-  padding: 0.5em;
+  margin-right: 0%;
+  
 }
-.btn-add {
-  width: 25%;
-  padding: 1em;
-  float: inline-end;
-  margin: 1em;
+.input-ac:hover {
+  border-color: #73AD21;
+}
+
+.label-ac:hover {
+  border-color: #73AD21;
+}
+
+.input-ac:focus {
+  outline: 0;
+  box-shadow: none;
+  border-color: #73AD21;
+}
+
+.label-ac:focus {
+  outline: 0;
+  box-shadow: none;
+  border-color: #73AD21;
+}
+#btnAdd{
+  color:#73AD21;
+  padding: 1.2rem 3rem;
+  text-transform: uppercase;
+  border-radius: 15px;
+  background-color: rgb(231, 229, 229);
+  border: 1px solid rgb(231, 229, 229);
+
+}
+
+#btnAdd:hover {
+  border: 1px solid rgb(231, 229, 229);
+  background: #73AD21;
+  color: #050202;
 }
 
 @media all and (max-width: 400px) {
   .input-ac,
-  .btn-add {
+  #btnAdd {
     width: 100%;
   }
-  .btn-add {
+  #btnAdd {
     float: inline-start;
   }
 }
+
+#Canlist{
+  font-size: 15px;
+}
+#abtc{
+  background-color: azure;
+  width: 380px;
+  display: flex;
+  justify-content: center;
+  height:75vh;
+  box-shadow: 2px 2px 20px 2px rgb(223, 188, 245);
+  border-radius: 15px;
+}
+
+  #form2{
+    margin-top: 20px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 520px;
+    height: 600px;
+    margin: auto;
+    }  

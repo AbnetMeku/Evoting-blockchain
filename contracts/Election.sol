@@ -32,8 +32,9 @@ pragma solidity >=0.4.21 <0.9.0;
       struct Candidate {
         uint256 candidateId;
         string header;
-        string slogan;
         string image;
+        string slogan;
+        
         uint256 voteCount;
        }
      mapping(uint256 => Candidate) public candidateDetails;
@@ -46,8 +47,8 @@ pragma solidity >=0.4.21 <0.9.0;
             Candidate({
                 candidateId: candidateCount,
                 header: _header,
-                slogan: _slogan,
                 image: _image,
+                slogan: _slogan,
                 voteCount: 0
             });
          candidateDetails[candidateCount] = newCandidate;
