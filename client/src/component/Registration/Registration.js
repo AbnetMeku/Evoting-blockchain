@@ -154,15 +154,17 @@ export default class Registration extends Component {
           <NotInit />
         ) : (
           <>
-            <div className="container-item info">
+            <div id="info">
               <p>Total registered voters: {this.state.voters.length}</p>
             </div>
-            <div className="container-main">
+
+            <div id="form3">
+            <div className="p-2" id="abtr">
+              <div>
               <h3>Registration</h3>
               <small>Register to vote.</small>
-              <div className="container-item">
-                <form>
-                  <div className="div-li">
+              
+                <form>                 
                     <label className={"label-r"}>
                       Account Address
                       <input
@@ -172,8 +174,7 @@ export default class Registration extends Component {
                         style={{ width: "400px" }}
                       />{" "}
                     </label>
-                  </div>
-                  <div className="div-li">
+                  
                     <label className={"label-r"}>
                       Name
                       <input
@@ -184,8 +185,7 @@ export default class Registration extends Component {
                         onChange={this.updateVoterName}
                       />{" "}
                     </label>
-                  </div>
-                  <div className="div-li">
+
                     <label className={"label-r"}>
                       ID number <span style={{ color: "tomato" }}>*</span>
                       <input
@@ -196,13 +196,13 @@ export default class Registration extends Component {
                         onChange={this.updateVoterID}
                       />
                     </label>
-                  </div>
-                  <p className="note">
+
+                  <p>
                     <span style={{ color: "tomato" }}> Note: </span>
                     <br /> Make sure your account address is
-                    correct and ID Card is renewed.<br /> Admin might not approve your account if the
-                    provided ID Card does not match the registered info in admins catalogue.
+                    correct and <br />ID Card is renewed.<br />
                   </p>
+                  <center>
                   <button
                     className="btn-add"
                     disabled={
@@ -214,28 +214,19 @@ export default class Registration extends Component {
                     {this.state.currentVoter.isRegistered
                       ? "Update"
                       : "Register"}
-                  </button>
+                  </button></center>
                 </form>
+                </div>
               </div>
+          </div>
+            
+            <div className="container-main"
+              style={{ borderTop: this.state.currentVoter.isRegistered ? null : "1px solid",}}>
+              {loadCurrentVoter( this.state.currentVoter, this.state.currentVoter.isRegistered )}
             </div>
-            <div
-              className="container-main"
-              style={{
-                borderTop: this.state.currentVoter.isRegistered
-                  ? null
-                  : "1px solid",
-              }}
-            >
-              {loadCurrentVoter(
-                this.state.currentVoter,
-                this.state.currentVoter.isRegistered
-              )}
-            </div>
+
             {this.state.isAdmin ? (
-              <div
-                className="container-main"
-                style={{ borderTop: "1px solid" }}
-              >
+              <div className="container-main" style={{ borderTop: "1px solid" }}>
                 <small>TotalVoters: {this.state.voters.length}</small>
                 {loadAllVoters(this.state.voters)}
               </div>

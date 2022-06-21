@@ -74,6 +74,7 @@ export default class Result extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
+          image:candidate.image,
           slogan: candidate.slogan,
           voteCount: candidate.voteCount,
         });
@@ -156,8 +157,9 @@ function displayWinner(candidates) {
       <div className="container-winner">
         <div className="winner-info">
           <p className="winner-tag">Winner!</p>
+          <img src={winner.image} alt="Candidate Pic" width="100px" height="100px"></img>
           <h2> {winner.header}</h2>
-          <p className="winner-slogan"><img src={winner.slogan} alt="Candidate Pic" width="100px" height="100px"></img></p>
+          <p className="winner-slogan">{winner.slogan}</p>
         </div>
         <div className="winner-votes">
           <div className="votes-tag">Total Votes: </div>
@@ -204,12 +206,7 @@ export function displayResults(candidates) {
                 {candidates.map(renderResults)}
               </table>
             </div>
-            <div
-              className="container-item"
-              style={{ border: "1px solid black" }}
-            >
-              <center>That is all.</center>
-            </div>
+            
           </>
         )}
       </div>

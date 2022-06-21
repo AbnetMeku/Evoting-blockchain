@@ -44,7 +44,7 @@ code {
 
 .container-item {
   transition: ease all 0.5s;
-  background-color: #f2f2f2;
+  background-color: azure;
   border-radius: 7px;
   width: 800px;
   padding: 10px;
@@ -79,13 +79,15 @@ code {
 .attention,
 .alert,
 .success {
-  border: 1px solid rgb(155, 12, 12);
+ 
   margin-top: 10px;
   margin-bottom: 10px px;
+  box-shadow: 2px 2px 20px 2px rgb(151, 231, 255);
+  border-radius: 10px;
 }
 .info {
-  background-color: #ddffff;
-  justify-content: right;
+  background-color: azure;
+  justify-content: center;
   width: auto;
 }
 .attention {

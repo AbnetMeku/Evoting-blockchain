@@ -120,10 +120,7 @@ export default class Registration extends Component {
             </table>
           </div>
         ) : null}
-        <div
-          className="container-list attention"
-          style={{ display: voter.isVerified ? "none" : null }}
-        >
+        <div className="container-list attention" style={{ display: voter.isVerified ? "none" : null }}>
           <table>
             <tr>
               <th>Account address</th>
@@ -151,6 +148,7 @@ export default class Registration extends Component {
             </tr>
           </table>
           <div style={{}}>
+            <center>
             <button
               className="btn-verification approve"
               disabled={voter.isVerified}
@@ -158,6 +156,7 @@ export default class Registration extends Component {
             >
               Approve
             </button>
+            </center>
           </div>
         </div>
       </>
@@ -187,7 +186,7 @@ export default class Registration extends Component {
           <h3>Verification</h3>
           <small>Total Voters: {this.state.voters.length}</small>
           {this.state.voters.length < 1 ? (
-            <div id="page2"><div className="container-item info">None has registered yet.</div></div>
+            <div id="page2"><div className="container-item info"><center>None has registered yet.</center></div></div>
           ) : (
             <>
               <div className="container-item info">

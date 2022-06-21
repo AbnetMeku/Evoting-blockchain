@@ -58,8 +58,7 @@ export default class Voting extends Component {
         deployedNetwork && deployedNetwork.address
       );
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
+      // Set web3, accounts, and contract to the state
       this.setState({
         web3: web3,
         ElectionInstance: instance,
@@ -86,6 +85,7 @@ export default class Voting extends Component {
         this.state.candidates.push({
           id: candidate.candidateId,
           header: candidate.header,
+          image: candidate.image,
           slogan: candidate.slogan,
         });
       }
@@ -113,9 +113,7 @@ export default class Voting extends Component {
       }
     } catch (error) {
       // Catch any errors for any of the above operations.
-      alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`
-      );
+      alert(`Failed to load web3, accounts, or contract. Check console for details.`);
       console.error(error);
     }
   };
@@ -136,12 +134,12 @@ export default class Voting extends Component {
       }
     };
     return (
-      <div className="container-item">
+      <div id="container-item">
         <div className="candidate-info">
-          <h2>
-            {candidate.header} <small>#{candidate.id}</small>
-          </h2>
-          <p className="slogan"><img src={candidate.slogan} alt="Candidate Pic" width="100px" height="100px"></img></p>
+          <img src={candidate.image} alt="Candidate Pic" width="100px" height="100px"></img>
+          <h3><small>#{candidate.id}</small> {candidate.header} </h3>
+          <p className="slogan">{candidate.slogan}</p>
+          
         </div>
         <div className="vote-btn-container">
           <button
@@ -234,12 +232,6 @@ export default class Voting extends Component {
                 ) : (
                   <>
                     {this.state.candidates.map(this.renderCandidates)}
-                    <div
-                      className="container-item"
-                      style={{ border: "1px solid black" }}
-                    >
-                      <center>That is all.</center>
-                    </div>
                   </>
                 )}
               </div>

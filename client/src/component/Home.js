@@ -155,7 +155,7 @@ export default class Home extends Component {
               
           ) : null}
           </div>
-                {this.state.isAdmin ? 
+                {this.state.isAdmin || this.state.elStarted  ? 
                 ("") : 
                 (<div id="pag"></div> )
                 }
@@ -220,7 +220,7 @@ export default class Home extends Component {
                  <div className="p-2" id="abtA">
                                     
                      <div>
-                      <h3>About Admin</h3>
+                      <h3>Admin Details</h3>
                       <label className="label-home">
                         Full Name{" "}
                         {errors.adminFName && <EMsg msg="*required" />}
@@ -276,17 +276,11 @@ export default class Home extends Component {
                   </div>
 
                
-            
-                
-  
-
 
               {/* about-election */}
-                            
-               
                  <div className="p-2"  id="abtE">
 
-                     <div><h3>About Election</h3>
+                     <div><h3>Election Details</h3>
                       <label className="label-home">
                         Election Title{" "}
                         {errors.electionTitle && <EMsg msg="*required" />}
@@ -313,9 +307,7 @@ export default class Home extends Component {
                       </label>
                       </div>
                   </div>
-    
-                
-              
+     
              </div>
              
 

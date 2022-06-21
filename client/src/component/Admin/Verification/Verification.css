@@ -1,7 +1,24 @@
-.btn-verification {
-  padding: 11px;
-  width: 100%;
-  margin-top: 11px;
-  margin-bottom: 11px;
+
+.btn-verification{
+  color:#9b59c2;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgb(228, 253, 253);
+  border: 1px solid rgb(223, 188, 245);
+  width: 180px;
   float: inline-end;
+  margin: 1em;
+}
+
+.btn-verification:hover {
+  border: 1px solid rgb(231, 229, 229);
+  background: #36ebe2;
+  color: azure;
+}
+.btn-add:disabled {
+  border: 1px solid rgb(231, 229, 229);
+  background: #a4eff5;
+  color: rgb(200, 120, 231);
 }

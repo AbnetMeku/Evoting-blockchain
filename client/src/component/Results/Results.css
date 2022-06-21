@@ -22,19 +22,22 @@ tr:nth-child(even) {
   margin-left: auto;
   margin-top: 17px;
   margin-bottom: 17px;
-  overflow: auto;
+  height: 300px;
 }
 .winner-slogan {
   padding: 7px 7px 7px 1px;
-  color: #ccab00;
-  font-size: 1.5em;
+  color: #735385;
+  font-size: 20;
   margin: 7px 0px;
   text-align: justify;
   overflow: auto;
 }
 .winner-info {
   width: 73%;
-  max-height: 150px;
+  max-height: 95%;
+  background-color: rgb(228, 253, 253);
+  box-shadow: 2px 2px 20px 2px rgb(224, 196, 241);
+  border-radius: 11px;
   display: inline-block;
   margin-right: 1%;
   overflow: auto;

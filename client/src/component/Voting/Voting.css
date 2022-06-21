@@ -1,11 +1,13 @@
 h2,
 h3 {
-  padding: 11px 1px;
+  padding: 5px 1px;
+  font-size: 23px;
   margin: auto;
   text-align: left;
+  color: #322b36;
 }
 small {
-  color: grey;
+  color: #735385;
   font-size: medium;
 }
 p {
@@ -13,11 +15,11 @@ p {
   padding: 3px;
 }
 .contact {
-  color: grey;
+  color: whitesmoke;
 }
 .slogan {
-  color: #ccab00;
-  font-size: 1.5em;
+  color: #735385;
+  font-size: 20;
   margin: 7px 0px;
 }
 .discription {
@@ -31,11 +33,12 @@ p {
 
 .candidate-info {
   transition: ease all 0.5s;
-  width: 91%;
+  width: 73%;
   float: left;
   margin-left: 1%;
-  padding: 17px;
-  background-color: #e5e5e5;
+  padding: 15px;
+  background-color: rgb(228, 253, 253);
+  box-shadow: 2px 2px 20px 2px rgb(224, 196, 241);
   border-radius: 11px;
 }
 .vote-btn-container {
@@ -48,9 +51,27 @@ p {
   padding: 17px;
 }
 .vote-bth {
-  width: 100%;
-  height: 55px;
-  font-size: 157%;
+
+  color:#9b59c2;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgb(228, 253, 253);
+  border: 1px solid rgb(223, 188, 245);
+  width: 100px;
+  float: inline-end;
+  margin: 1em;
+}
+.vote-bth:hover {
+  border: 1px solid rgb(231, 229, 229);
+  background: #36ebe2;
+  color: azure;
+}
+.vote-bth:disabled {
+  border: 1px solid rgb(231, 229, 229);
+  background: #a4eff5;
+  color: rgb(200, 120, 231);
 }
 @media all and (max-width: 900px) {
   .candidate-info,
@@ -58,4 +79,16 @@ p {
     width: 100%;
     height: 100%;
   }
+}
+#container-item {
+  transition: ease all 0.5s;
+  background-color: azure;
+  border-radius: 10px;
+  width: 700px;
+  padding: 10px;
+  margin: 17px auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: auto;
 }

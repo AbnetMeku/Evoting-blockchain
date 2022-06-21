@@ -1,18 +1,18 @@
 .label-home {
   padding: 0.5em;
   margin-bottom: 10px;
-  color: rgb(173, 20, 20); 
+  color: #9b59c2; 
 }
 
 
 .input-home {
   margin-bottom: 20px;
   border: 0;
-  border-bottom: 1px solid #7807e2;
+  border-bottom: 1px solid #735385;
   border-radius: 0;
   background: transparent;
   padding: 0;
-  color: rgb(133, 62, 62);
+  color: #322b36;
   width: 280px;
 }
 .input-home,
@@ -22,23 +22,23 @@
   
 }
 .input-home:hover {
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 .label-home:hover {
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 .input-home:focus {
   outline: 0;
   box-shadow: none;
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 .label-home:focus {
   outline: 0;
   box-shadow: none;
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 #Account {
@@ -48,6 +48,7 @@
   width: auto;
 }
 
+
 #notIn{
   text-align: center;
   background-color:azure;
@@ -55,7 +56,6 @@
   z-index: 0;
   border-radius: 20px;
 }
-
 #a{
   font-size: 25px;
   margin-top: 15px;
@@ -66,7 +66,7 @@
     90% {
       opacity: 0.5;
     }
-  }
+}
 
 #form{
 background-color: transparent;
@@ -87,7 +87,6 @@ background-color: azure;
   height:70vh;
   box-shadow: 2px 2px 20px 2px rgb(223, 188, 245);
   border-radius: 15px;
- 
 }
 
 #abtE{
@@ -102,19 +101,20 @@ background-color: azure;
 }
 
 #btn{
-  color:#73AD21;
-  padding: 1.2rem 3rem;
+  color:#9b59c2;
+  padding: 15px 15px;
   text-transform: uppercase;
   border-radius: 15px;
-  background-color: rgb(231, 229, 229);
-  border: 1px solid rgb(231, 229, 229);
+  margin-top: 10px;
+  background-color: rgb(228, 253, 253);
+  border: 1px solid rgb(223, 188, 245);
 
 }
 
 #btn:hover {
   border: 1px solid rgb(231, 229, 229);
-  background: #73AD21;
-  color: #050202;
+  background: #36ebe2;
+  color: azure;
 }
 
 
