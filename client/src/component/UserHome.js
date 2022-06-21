@@ -7,16 +7,18 @@ function UserHome(props) {
         <div className="container-list title">
           <h1>{props.el.electionTitle}</h1>
           <br />
-          <center>{props.el.organizationTitle}</center>
-          <table style={{ marginTop: "21px" }}>
+         <center>{props.el.PollingStation}</center>
+          <table style={{ marginTop: "21px" ,backgroundColor:"azure"}}>
+
+            
             <tr>
-              <th>admin</th>
+              <th>admin :</th>
               <td>
                 {props.el.adminName} ({props.el.adminTitle})
               </td>
             </tr>
             <tr>
-              <th>contact</th>
+              <th>contact :</th>
               <td style={{ textTransform: "none" }}>{props.el.adminEmail}</td>
             </tr>
           </table>

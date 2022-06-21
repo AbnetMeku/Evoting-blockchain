@@ -9,18 +9,18 @@
 .label-ac {
   padding: 0.5em;
   margin-bottom: 10px;
-  color: rgb(173, 20, 20); 
+  color: #9b59c2; 
 }
 
 
 .input-ac {
   margin-bottom: 20px;
   border: 0;
-  border-bottom: 1px solid #7807e2;
+  border-bottom: 1px solid #735385;
   border-radius: 0;
   background: transparent;
   padding: 0;
-  color: rgb(133, 62, 62);
+  color: #322b36;
   width: 280px;
 }
 .input-ac,
@@ -30,38 +30,40 @@
   
 }
 .input-ac:hover {
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 .label-ac:hover {
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 .input-ac:focus {
   outline: 0;
   box-shadow: none;
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
 
 .label-ac:focus {
   outline: 0;
   box-shadow: none;
-  border-color: #73AD21;
+  border-color: #36ebe2;
 }
+
 #btnAdd{
-  color:#73AD21;
-  padding: 1.2rem 3rem;
+  color:#9b59c2;
+  padding: 15px 23px;
   text-transform: uppercase;
   border-radius: 15px;
-  background-color: rgb(231, 229, 229);
-  border: 1px solid rgb(231, 229, 229);
+  margin-top: 10px;
+  background-color: rgb(228, 253, 253);
+  border: 1px solid rgb(223, 188, 245);
 
 }
 
 #btnAdd:hover {
   border: 1px solid rgb(231, 229, 229);
-  background: #73AD21;
-  color: #050202;
+  background: #36ebe2;
+  color: azure;
 }
 
 @media all and (max-width: 400px) {
@@ -74,9 +76,19 @@
   }
 }
 
+#btnAdd:disabled {
+  border: 1px solid rgb(231, 229, 229);
+  background: #a4eff5;
+  color: rgb(200, 120, 231);
+}
+
 #Canlist{
   font-size: 15px;
+  margin-left: 0%;
 }
+
+
+
 #abtc{
   background-color: azure;
   width: 380px;
@@ -97,3 +109,29 @@
     height: 600px;
     margin: auto;
     }  
+
+    #info{
+      text-align: center;
+      background-color:azure;
+      width: 300px;
+      height: 40px;
+      z-index: 0;
+      border-radius: 20px;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      margin-top: 20px;
+      box-shadow: 2px 2px 20px 2px rgb(188, 236, 245);
+    }   
+
+    #abtcl{
+      margin-top: 20px;
+      padding-bottom: 10px;
+      background-color: azure;
+      width:auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      box-shadow: 2px 2px 20px 2px rgb(188, 232, 245);
+      border-radius: 15px;
+    }

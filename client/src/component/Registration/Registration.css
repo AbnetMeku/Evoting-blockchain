@@ -1,30 +1,105 @@
 .div-li {
   display: inline-grid;
 }
-.input-r {
-  margin: 0.5em;
-  margin-left: 0;
-  padding: 1em;
-  display: block;
-  overflow: scroll;
-}
 .label-r {
-  margin: 0.1em;
   padding: 0.5em;
-  display: block;
+  margin-bottom: 10px;
+  color: #9b59c2; 
 }
-.btn-add {
+
+
+.input-r {
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: 1px solid #735385;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  color: #322b36;
+  width: 280px;
+}
+.input-r,
+.label-r {
+  display: block;
+  margin-right: 0%;
+  
+}
+.input-r:hover {
+  border-color: #36ebe2;
+}
+
+.label-r:hover {
+  border-color: #36ebe2;
+}
+
+.input-r:focus {
+  outline: 0;
+  box-shadow: none;
+  border-color: #36ebe2;
+}
+
+.label-r:focus {
+  outline: 0;
+  box-shadow: none;
+  border-color: #36ebe2;
+}
+
+.btn-add{
+  color:#9b59c2;
+  padding: 15px 23px;
+  text-transform: uppercase;
+  border-radius: 15px;
+  margin-top: 10px;
+  background-color: rgb(228, 253, 253);
+  border: 1px solid rgb(223, 188, 245);
   width: 50%;
   padding: 1em;
   float: inline-end;
   margin: 1em;
 }
-.note {
-  width: 90%;
-  padding: 11px;
-  padding-left: 1px;
-  text-align: justify;
-  max-height: 111px;
-  overflow: auto;
-  line-height: 1.5em;
+
+.btn-add:hover {
+  border: 1px solid rgb(231, 229, 229);
+  background: #36ebe2;
+  color: azure;
 }
+.btn-add:disabled {
+  border: 1px solid rgb(231, 229, 229);
+  background: #a4eff5;
+  color: rgb(200, 120, 231);
+}
+
+
+#abtr{
+  background-color: azure;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  height:85vh;
+  box-shadow: 2px 2px 20px 2px rgb(223, 188, 245);
+  border-radius: 15px;
+}
+
+  #form3{
+    margin-top: 20px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    } 
+    #info{
+      text-align: center;
+      background-color:azure;
+      width: 300px;
+      height: 40px;
+      z-index: 0;
+      border-radius: 20px;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      margin-top: 20px;
+      box-shadow: 2px 2px 20px 2px rgb(188, 236, 245);
+    }

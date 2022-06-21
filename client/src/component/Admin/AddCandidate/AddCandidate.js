@@ -156,25 +156,32 @@ export default class AddCandidate extends Component {
                 />
               </label>
               <label className={"label-ac"}>
-                Party Slogan
+                Party Name
                 <input
                   className={"input-ac"}
                   type="text"
-                  placeholder="Enter Slogan"
+                  placeholder="Party Name"
                   required
                   value={this.state.slogan}
                   onChange={this.updateSlogan}
                 />
               </label>
+              <center>
               <button
                 id="btnAdd"
                 disabled={
-                  this.state.header.length < 7 || this.state.header.length > 30
+                  this.state.header.length < 7||
+                  this.state.slogan.length > 20||
+                  this.state.slogan.length < 3||
+                  this.state.image.length < 20
+                  
+                  
                 }
                 onClick={this.addCandidate}
               >
                 Add
               </button>
+              </center>
             </form>
             </div>
           </div>
@@ -188,20 +195,25 @@ export function loadAdded(candidates) {
   const renderAdded = (candidate) => {
     return (
       <>
-        <div className="container-list success">
-          <div style={{maxHeight: "auto",overflow: "auto",}} id="Canlist">
-            {candidate.id}. <strong>{candidate.header}</strong>:
-            {" "}
-            <img src={candidate.image} alt="Candidate Pic" width="150px" height="150px"></img>
-            {candidate.slogan}
-          </div>
-        </div>
+            <table id="Canlist">
+              
+              <tr>
+                <td>
+                 <img src={candidate.image} alt="Candidate Pic" width="150px" height="150px"></img> 
+                </td>
+                <td>
+                {candidate.id}. <strong>{candidate.header}</strong><br/>{candidate.slogan}
+                </td>
+                
+              </tr>
+            </table>
       </>
     );
   };
+
   return (
     <div className="container-main" style={{ borderTop: "1px solid" }}>
-      <div className="container-item info">
+      <div id="info">
         <center>Candidates List</center>
       </div>
       {candidates.length < 1 ? (
@@ -209,14 +221,11 @@ export function loadAdded(candidates) {
           <center>No candidates added.</center>
         </div>
       ) : (
-        <div
-          className="container-item"
-          style={{
-            display: "block",
-            backgroundColor: "#DDFFFF",
-          }}
-        >
-          {candidates.map(renderAdded)}
+        <div id="abtcl" style={{display: "block",backgroundColor: "#DDFFFF",}}>
+  
+             {candidates.map(renderAdded)} 
+            
+          
         </div>
       )}
     </div>
