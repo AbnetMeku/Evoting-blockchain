@@ -105,7 +105,7 @@ const Footer = () => (
 
       <MDBContainer id="k">
         <section  id="k">
-          <a className='btn btn-outline-light btn-floating m-1' href='#!' role='button'>
+          <a className='btn btn-outline-light btn-floating m-1' href='https://www.facebook.com/people/National-Electoral-Board-of-Ethiopia-NEBE-%E1%8B%A8%E1%8A%A2%E1%89%B5%E1%8B%AE%E1%8C%B5%E1%8B%AB-%E1%89%A5%E1%88%94%E1%88%AB%E1%8B%8A-%E1%88%9D%E1%88%AD%E1%8C%AB-%E1%89%A6%E1%88%AD%E1%8B%B5/100066827943709/' role='button'>
             <MDBIcon fab icon='facebook-f' />
           </a>
 

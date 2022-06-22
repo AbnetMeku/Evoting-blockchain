@@ -4,9 +4,11 @@ import React, { Component } from "react";
 //components
 import Navbar from "../../Navbar/Navigation";
 import NavbarAdmin from "../../Navbar/NavigationAdmin";
+import AdminOnly from "../../AdminOnly";
+
+//contaract and web3
 import getWeb3 from "../../../getWeb3";
 import Election from "../../../contracts/Election.json";
-import AdminOnly from "../../AdminOnly";
 
 //css
 import "./AddCandidate.css";
