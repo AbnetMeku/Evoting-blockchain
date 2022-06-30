@@ -34,7 +34,6 @@ pragma solidity >=0.4.21 <0.9.0;
         string header;
         string image;
         string slogan;
-        
         uint256 voteCount;
        }
      mapping(uint256 => Candidate) public candidateDetails;
